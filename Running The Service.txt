@@ -1,0 +1,29 @@
+RUNNING THE CONTACT SERVICE
+
+To start up a local instance of the service, select ContactServiceProvider from your IDE and Run As Application.
+
+NOTE: This implementation connects to an empty database, so no records will be retrieved. It is assumed that in a 
+real-world scenario, an implementation of the ContactDataService interface will be provided such that live data can
+be queried. See "Testing The Service" for instructions on how to test with data.
+
+
+API METHODS
+
+* GetContactByID
+Search for a single contact using a unique identifier. The identifier must match exactly (case-sensitive).
+
+Input: A JSON-formatted string containing a key of "id" with the value set to the identifier being searched for.
+-- Example: { "id": "CK0029" }
+
+Output: A JSON-formatted string containing either a contact's id and name or an error indicating no match was found.
+-- Example: { "id": "CK0029", "name": "Clark Kent" }
+
+
+* GetContactsBySearch
+Search for multiple contacts using the name field. This can be a full or partial match (case-insensitive).
+
+Input: A JSON-formatted string containing a key of "searchTerm" with the value set to the string to search for.
+-- Example: { "searchTerm": "diana" }
+
+Output: A JSON-formatted string containing an array of contacts, or an error indicating no matches were found.
+-- Example: { "results": [{ "id": "DP4301", "name": "Diana Prince" }] }

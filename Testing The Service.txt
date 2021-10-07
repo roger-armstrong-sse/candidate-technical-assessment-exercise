@@ -1,0 +1,27 @@
+TESTING THE CONTACT SERVICE
+
+To run the JUnit tests provided, select ContactServiceImplTest from your IDE and select Run As JUnit Test.
+
+
+OVERVIEW OF TESTS
+
+* testGetContactByID
+Tests if a known contact ID returns the expected contact.
+
+* testGetContactByID_NoResults
+Tests if an unknown contact ID returns a no match error message.
+
+* testGetContactByID_Error
+Tests if a connection error returns a user-friendly error message.
+
+* testGetContactsBySearch
+Tests if a substring matching a single result returns only the expected contact.
+
+* testGetContactsBySearch_NoResults
+Tests if a substring matching no results returns a no match error message.
+
+* testGetContactsBySearch_MultipleResults
+Tests if a substring matching multiple results returns all expected contacts.
+
+* testGetContactsBySearch_Error
+Tests if a connection error returns a user-friendly error message.
