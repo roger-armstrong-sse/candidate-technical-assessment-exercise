@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://contactsearch.rarmstrong.gaggle.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://contactsearch.rarmstrong.gaggle.com" xmlns:intf="http://contactsearch.rarmstrong.gaggle.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://contactsearch.rarmstrong.gaggle.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="GetContactByID">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="GetContactByIDResponse">
+    <complexType>
+     <sequence>
+      <element name="GetContactByIDReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="GetContactsBySearch">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="GetContactsBySearchResponse">
+    <complexType>
+     <sequence>
+      <element name="GetContactsBySearchReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="GetContactsBySearchResponse">
+
+      <wsdl:part element="impl:GetContactsBySearchResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetContactByIDResponse">
+
+      <wsdl:part element="impl:GetContactByIDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetContactsBySearchRequest">
+
+      <wsdl:part element="impl:GetContactsBySearch" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="GetContactByIDRequest">
+
+      <wsdl:part element="impl:GetContactByID" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ContactServiceImpl">
+
+      <wsdl:operation name="GetContactByID">
+
+         <wsdl:input message="impl:GetContactByIDRequest" name="GetContactByIDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:GetContactByIDResponse" name="GetContactByIDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetContactsBySearch">
+
+         <wsdl:input message="impl:GetContactsBySearchRequest" name="GetContactsBySearchRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:GetContactsBySearchResponse" name="GetContactsBySearchResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ContactServiceImplSoapBinding" type="impl:ContactServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="GetContactByID">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetContactByIDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetContactByIDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="GetContactsBySearch">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="GetContactsBySearchRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="GetContactsBySearchResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ContactServiceImplService">
+
+      <wsdl:port binding="impl:ContactServiceImplSoapBinding" name="ContactServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/ContactSearchService/services/ContactServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

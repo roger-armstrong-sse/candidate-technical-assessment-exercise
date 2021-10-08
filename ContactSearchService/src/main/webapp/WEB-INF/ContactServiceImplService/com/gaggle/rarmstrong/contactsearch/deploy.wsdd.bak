@@ -1,0 +1,32 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ContactServiceImplService WSDL service -->
+
+  <service name="ContactServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://contactsearch.rarmstrong.gaggle.com"/>
+      <parameter name="wsdlServiceElement" value="ContactServiceImplService"/>
+      <parameter name="schemaQualified" value="http://contactsearch.rarmstrong.gaggle.com"/>
+      <parameter name="wsdlServicePort" value="ContactServiceImpl"/>
+      <parameter name="className" value="com.gaggle.rarmstrong.contactsearch.ContactServiceImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ContactServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getContactByID" qname="operNS:GetContactByID" xmlns:operNS="http://contactsearch.rarmstrong.gaggle.com" returnQName="retNS:GetContactByIDReturn" xmlns:retNS="http://contactsearch.rarmstrong.gaggle.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:request" xmlns:pns="http://contactsearch.rarmstrong.gaggle.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getContactsBySearch" qname="operNS:GetContactsBySearch" xmlns:operNS="http://contactsearch.rarmstrong.gaggle.com" returnQName="retNS:GetContactsBySearchReturn" xmlns:retNS="http://contactsearch.rarmstrong.gaggle.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:request" xmlns:pns="http://contactsearch.rarmstrong.gaggle.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="getContactByID getContactsBySearch"/>
+
+  </service>
+</deployment>
