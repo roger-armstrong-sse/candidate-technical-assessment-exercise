@@ -2,7 +2,7 @@ package com.gaggle.rarmstrong.contactsearch;
 
 public interface ContactService {
 
-	public String GetContactByID(String request);
+	public String getContactByID(String request);
 	
-	public String GetContactsBySearch(String request);
+	public String getContactsBySearch(String request);
 }

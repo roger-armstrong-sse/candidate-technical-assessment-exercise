@@ -23,7 +23,7 @@ public class ContactServiceImplTest {
 	public void testGetContactByID() {		
 		ContactServiceImpl service = new ContactServiceImpl(_dataService);
 		String request = "{ \"id\": \"BW2152\" }";
-		String response = service.GetContactByID(request);
+		String response = service.getContactByID(request);
 		JSONObject obj = new JSONObject(response);
 		
 		assertEquals("Bruce Wayne", obj.getString("name"));
@@ -33,7 +33,7 @@ public class ContactServiceImplTest {
 	public void testGetContactByID_NoResults() {
 		ContactServiceImpl service = new ContactServiceImpl(_dataService);
 		String request = "{ \"id\": \"SR0704\" }";
-		String response = service.GetContactByID(request);
+		String response = service.getContactByID(request);
 		JSONObject obj = new JSONObject(response);
 		
 		assertEquals(NO_MATCH_MESSAGE, obj.getString("error"));
@@ -47,7 +47,7 @@ public class ContactServiceImplTest {
 		_dataService.DestroyRecords();
 		
 		String request = "{ \"id\": \"BW2152\" }";
-		String response = service.GetContactByID(request);
+		String response = service.getContactByID(request);
 		JSONObject obj = new JSONObject(response);
 		
 		assertEquals(ERROR_MESSAGE, obj.getString("error"));
@@ -57,7 +57,7 @@ public class ContactServiceImplTest {
 	public void testGetContactsBySearch() {
 		ContactServiceImpl service = new ContactServiceImpl(_dataService);
 		String request = "{ \"searchTerm\": \"bru\" }";
-		String response = service.GetContactsBySearch(request);
+		String response = service.getContactsBySearch(request);
 		JSONObject obj = new JSONObject(response);		
 		JSONArray arr = obj.getJSONArray("results");
 		
@@ -69,7 +69,7 @@ public class ContactServiceImplTest {
 	public void testGetContactsBySearch_NoResults() {
 		ContactServiceImpl service = new ContactServiceImpl(_dataService);
 		String request = "{ \"searchTerm\": \"Stark\" }";
-		String response = service.GetContactsBySearch(request);
+		String response = service.getContactsBySearch(request);
 		JSONObject obj = new JSONObject(response);
 		
 		assertEquals(NO_MATCH_MESSAGE, obj.getString("error"));
@@ -79,7 +79,7 @@ public class ContactServiceImplTest {
 	public void testGetContactsBySearch_MultipleResults() {
 		ContactServiceImpl service = new ContactServiceImpl(_dataService);
 		String request = "{ \"searchTerm\": \"rry\" }";
-		String response = service.GetContactsBySearch(request);
+		String response = service.getContactsBySearch(request);
 		JSONObject obj = new JSONObject(response);		
 		JSONArray arr = obj.getJSONArray("results");
 		
@@ -96,7 +96,7 @@ public class ContactServiceImplTest {
 		_dataService.DestroyRecords();
 				
 		String request = "{ \"searchTerm\": \"Wayne\" }";
-		String response = service.GetContactsBySearch(request);
+		String response = service.getContactsBySearch(request);
 		JSONObject obj = new JSONObject(response);
 		
 		assertEquals(ERROR_MESSAGE, obj.getString("error"));
