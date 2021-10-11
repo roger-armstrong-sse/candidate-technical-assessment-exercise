@@ -110,7 +110,7 @@ public class ContactServiceImplSoapBindingStub extends org.apache.axis.client.St
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://contactsearch.rarmstrong.gaggle.com", "GetContactByID"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://contactsearch.rarmstrong.gaggle.com", "getContactByID"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
@@ -144,7 +144,7 @@ public class ContactServiceImplSoapBindingStub extends org.apache.axis.client.St
         _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
         _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
         _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://contactsearch.rarmstrong.gaggle.com", "GetContactsBySearch"));
+        _call.setOperationName(new javax.xml.namespace.QName("http://contactsearch.rarmstrong.gaggle.com", "getContactsBySearch"));
 
         setRequestHeaders(_call);
         setAttachments(_call);
