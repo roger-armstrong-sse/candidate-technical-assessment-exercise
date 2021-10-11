@@ -1,6 +1,8 @@
 RUNNING THE CONTACT SERVICE
 
-To start up a local instance of the service, select ContactServiceProvider from your IDE and Run As Application.
+To start up a local instance of the service, have Tomcat running on port 8080 and navigate to 
+http://localhost:8080/ContactSearchServiceClient/sampleContactServiceImplProxy/TestClient.jsp to see the client
+test wrapper around the service.
 
 NOTE: This implementation connects to an empty database, so no records will be retrieved. It is assumed that in a 
 real-world scenario, an implementation of the ContactDataService interface will be provided such that live data can
