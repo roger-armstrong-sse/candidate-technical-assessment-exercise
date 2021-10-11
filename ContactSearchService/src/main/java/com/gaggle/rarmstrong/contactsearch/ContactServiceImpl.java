@@ -10,6 +10,7 @@ public class ContactServiceImpl implements ContactService {
 	
 	private static final String NO_MATCH_MESSAGE = "No records matched your search.";
 	private static final String ERROR_MESSAGE = "There was an error accessing the data.";
+	private static final String BAD_REQUEST = "Bad Request Format";
 	
 	public ContactServiceImpl() {
 		_dataService = new ContactDataServiceImpl();		
@@ -37,7 +38,7 @@ public class ContactServiceImpl implements ContactService {
 			return response;
 		}
 		catch (Exception e) {
-			return "{ \"error\": \"Bad Request Format\" }";
+			return "{ \"error\": \"" + BAD_REQUEST + "\" }";
 		}
 	}
 
@@ -61,7 +62,7 @@ public class ContactServiceImpl implements ContactService {
 			return response;
 		}
 		catch (Exception e) {
-			return "{ \"error\": \"Bad Request Format\" }";
+			return "{ \"error\": \"" + BAD_REQUEST + "\" }";
 		}
 	}
 }
